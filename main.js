@@ -294,26 +294,27 @@
     submitBtn.classList.add('is-loading');
     submitBtn.disabled = true;
 
-    const payload = {
-      access_key: WEB3FORMS_KEY,
-      subject: 'New inquiry from 34north.net',
-      name: nameInput.value.trim(),
-      email: emailInput.value.trim(),
-      company: document.getElementById('company').value.trim(),
-      service: document.getElementById('service').value,
-      message: messageInput.value.trim(),
-    };
+    const formData = new FormData();
+    formData.append('access_key', WEB3FORMS_KEY);
+    formData.append('subject', 'New inquiry from 34north.net');
+    formData.append('name', nameInput.value.trim());
+    formData.append('email', emailInput.value.trim());
+    formData.append('company', document.getElementById('company').value.trim());
+    formData.append('service', document.getElementById('service').value);
+    formData.append('message', messageInput.value.trim());
+
+    let succeeded = false;
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
+        body: formData,
       });
 
       const result = await res.json();
-      if (!result.success) throw new Error(result.message);
+      if (!res.ok || !result.success) throw new Error(result.message || 'Submission failed');
 
+      succeeded = true;
       form.hidden = true;
       successEl.hidden = false;
 
@@ -324,7 +325,7 @@
       submitBtn.classList.remove('is-loading');
       submitCount++;
       sessionStorage.setItem('34n_sub_count', submitCount.toString());
-      applyCooldown();
+      if (!succeeded) applyCooldown();
     }
   });
 
