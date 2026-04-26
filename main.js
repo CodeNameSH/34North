@@ -149,6 +149,35 @@
 
   if (!form) return;
 
+  /* ─── Submission rate limiting ───────────────────────────────── */
+  const SUBMIT_LIMIT = 3;
+  const COOLDOWN_SECS = 30;
+  let submitCount = parseInt(sessionStorage.getItem('34n_sub_count') || '0', 10);
+
+  if (submitCount >= SUBMIT_LIMIT) {
+    submitBtn.disabled = true;
+    submitBtn.querySelector('.btn-label').textContent = 'Submission limit reached';
+  }
+
+  function applyCooldown() {
+    let remaining = COOLDOWN_SECS;
+    submitBtn.disabled = true;
+    (function tick() {
+      if (remaining <= 0) {
+        if (submitCount < SUBMIT_LIMIT) {
+          submitBtn.querySelector('.btn-label').textContent = 'Send Message';
+          submitBtn.disabled = false;
+        } else {
+          submitBtn.querySelector('.btn-label').textContent = 'Submission limit reached';
+        }
+        return;
+      }
+      submitBtn.querySelector('.btn-label').textContent = `Try again in ${remaining}s`;
+      remaining--;
+      setTimeout(tick, 1000);
+    }());
+  }
+
   /* Field refs */
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
@@ -190,6 +219,10 @@
   messageInput.addEventListener('blur', () => {
     if (!messageInput.value.trim()) setError(messageInput, 'message-error', 'Please describe your project or question.');
     else clearError(messageInput, 'message-error');
+  });
+
+  captchaInput.addEventListener('input', () => {
+    clearError(captchaInput, 'captcha-error');
   });
 
   function isValidEmail(email) {
@@ -246,22 +279,24 @@
     return valid;
   }
 
+  const WEB3FORMS_KEY = '2bf352bd-09b1-4824-b5cd-4bbe927243f5';
+
   /* Submit handler */
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     if (!validateForm()) {
-      // Focus first invalid field
       const firstInvalid = form.querySelector('.is-invalid');
       if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    // Loading state
     submitBtn.classList.add('is-loading');
     submitBtn.disabled = true;
 
-    const data = {
+    const payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: 'New inquiry from 34north.net',
       name: nameInput.value.trim(),
       email: emailInput.value.trim(),
       company: document.getElementById('company').value.trim(),
@@ -270,18 +305,15 @@
     };
 
     try {
-      /*
-       * Replace the URL below with your form handler endpoint.
-       * Options include:
-       *   - Formspree:    https://formspree.io/f/YOUR_FORM_ID
-       *   - Netlify Forms: set method="POST" and add data-netlify="true" to <form>
-       *   - Your own API: POST /api/contact
-       *
-       * For now we simulate a successful submission after a brief delay.
-       */
-      await simulateSubmit(data);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
 
-      // Success
+      const result = await res.json();
+      if (!result.success) throw new Error(result.message);
+
       form.hidden = true;
       successEl.hidden = false;
 
@@ -290,31 +322,11 @@
       errorStateEl.hidden = false;
     } finally {
       submitBtn.classList.remove('is-loading');
-      submitBtn.disabled = false;
+      submitCount++;
+      sessionStorage.setItem('34n_sub_count', submitCount.toString());
+      applyCooldown();
     }
   });
-
-  /*
-   * Remove simulateSubmit() and replace with a real fetch() call
-   * once you have a form handler endpoint configured.
-   *
-   * Example real implementation:
-   *
-   *   async function submitForm(data) {
-   *     const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-   *       method: 'POST',
-   *       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-   *       body: JSON.stringify(data),
-   *     });
-   *     if (!res.ok) throw new Error('Server error');
-   *   }
-   */
-  function simulateSubmit(data) {
-    return new Promise(resolve => setTimeout(() => {
-      console.log('Form data (simulation — wire to a real endpoint):', data);
-      resolve();
-    }, 1200));
-  }
 
   /* ─── Smooth scroll for anchor links ────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
