@@ -47,7 +47,6 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -107,7 +106,6 @@ input, textarea, select {
   display: flex;
   align-items: center;
   padding: calc(var(--nav-height) + 60px) 0 80px;
-  scroll-snap-align: start;
   overflow: hidden;
 }
 
@@ -551,36 +549,6 @@ input, textarea, select {
   justify-content: center;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-faint);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.6;
-  transition: opacity 0.3s;
-}
-.scroll-indicator:hover { opacity: 1; }
-
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, var(--text-faint));
-  animation: scrollDrop 2s ease-in-out infinite;
-}
-
-@keyframes scrollDrop {
-  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
-  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
-}
 
 /* ─── Services Grid ───────────────────────────────────────────── */
 .services-grid {
@@ -842,6 +810,91 @@ input, textarea, select {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.65;
+}
+
+/* ─── Work / Projects Grid ───────────────────────────────────── */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease-out);
+}
+
+.work-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 40px rgba(59, 130, 246, 0.12);
+  transform: translateY(-3px);
+}
+
+.work-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.work-card__type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(59, 130, 246, 0.1);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.work-card__ext {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: transform 0.2s var(--ease-out);
+}
+.work-card:hover .work-card__ext { transform: translate(3px, -3px); }
+
+.work-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.work-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.work-card__url {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.work-note {
+  margin-top: 44px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.65;
+}
+
+.work-note a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ─── Contact Section ────────────────────────────────────────── */
@@ -1314,8 +1367,8 @@ input, textarea, select {
 
 /* ─── Print ───────────────────────────────────────────────────── */
 @media print {
-  .site-header, .scroll-indicator, .mobile-menu, .mobile-overlay { display: none; }
-  .section { min-height: auto; padding: 40px 0; scroll-snap-align: none; }
+  .site-header, .mobile-menu, .mobile-overlay { display: none; }
+  .section { min-height: auto; padding: 40px 0; }
   .reveal { opacity: 1; transform: none; }
   .orb, .hero-bg-grid, .ai-network { display: none; }
 }

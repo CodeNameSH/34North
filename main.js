@@ -8,7 +8,7 @@
   /* ─── Nav: scroll-aware appearance ──────────────────────────── */
   const header = document.querySelector('.site-header');
 
-  const LIGHT_SECTIONS = ['services', 'database', 'why-us'];
+  const LIGHT_SECTIONS = ['services', 'database', 'why-us', 'work'];
 
   function updateNav() {
     const scrollY = window.scrollY;
