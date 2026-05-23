@@ -1305,6 +1305,9 @@ input, textarea, select {
 
 /* ─── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .ai-pillars { grid-template-columns: repeat(2, 1fr); }
   .ai-pillars .ai-pillar:last-child { grid-column: span 2; max-width: 400px; margin: 0 auto; }
@@ -1339,9 +1342,6 @@ input, textarea, select {
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-
   .hero-heading { font-size: clamp(2.2rem, 8vw, 3.5rem); }
 
   .services-grid { grid-template-columns: 1fr 1fr; }
