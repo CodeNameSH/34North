@@ -1119,6 +1119,35 @@ input, textarea, select {
   opacity: 0.7;
 }
 
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: var(--text-faint);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.social-link:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.1);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
 .footer-nav ul {
   display: flex;
   flex-wrap: wrap;
