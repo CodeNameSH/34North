@@ -4,3 +4,9 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# Claude Code
+.claude/
+
+# Generated assets not served by the site
+logo-300.png
