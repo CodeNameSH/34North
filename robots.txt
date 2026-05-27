@@ -2,3 +2,10 @@ User-agent: *
 Allow: /
 
 Sitemap: https://34north.net/sitemap.xml
+LLMs: https://34north.net/llms.txt
+
+# Content Signals (https://contentsignals.org/)
+# search=yes: allow indexing by search engines
+# ai-train=no: do not use content for AI model training
+# ai-input=yes: agents may use content as context for answering questions
+Content-Signal: search=yes, ai-train=no, ai-input=yes

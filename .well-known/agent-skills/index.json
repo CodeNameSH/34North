@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "markdown-content",
+      "type": "content",
+      "description": "Request full site content as structured Markdown via Accept: text/markdown content negotiation.",
+      "url": "https://34north.net/.well-known/agent-skills/content/SKILL.md",
+      "sha256": "c406385e3d21370ef564f9f803f2aee3eb2d192158759ecfd01279244facefe5"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+# 34 North — Full Site Content
+
+> Expert software development services: strategic consulting, database design, website and API development, and AI integration. Turning complex technical challenges into business results.
+
+URL: https://34north.net
+Contact: contact@34north.net
+
+---
+
+## About
+
+34 North is a solo software development and consulting practice. Clients work directly with the developer — no account managers, no sales teams, no runaround. Services span the full stack from data layer to user interface.
+
+---
+
+## Software Consulting
+
+Strategy first. Technology second.
+
+Good software starts with clear thinking. 34 North works alongside clients to understand the business, map the real problem, and recommend the right technical path.
+
+Services include:
+- Technology audits and architecture reviews
+- Build vs. buy analysis and vendor evaluation
+- Technical roadmap and project planning
+- Legacy system modernization and migration
+
+---
+
+## Database Design
+
+Your data, perfectly structured.
+
+A well-designed database is the foundation everything else depends on. 34 North designs schemas, query patterns, and data pipelines that stay fast and maintainable as data grows.
+
+Services include:
+- Relational and NoSQL schema design
+- Query optimization and indexing strategies
+- Data modeling for reporting and analytics
+- Migrations, replication, and backup planning
+
+---
+
+## Website and API Development
+
+Built to perform. Designed to last.
+
+From new builds and site refreshes to complex web applications and backend APIs — fast, reliable, and built to last. SEO and performance are part of every project.
+
+Services include:
+- Custom websites and site refreshes built for speed
+- REST and GraphQL API design and development
+- SEO foundation and performance optimization
+- Third-party integrations, auth, and security
+
+Website projects start at $3,000, scaled to features and complexity.
+
+---
+
+## AI Integration and Management
+
+AI that actually works for your business.
+
+34 North cuts through the hype to find where AI creates real value — designing, integrating, and managing AI capabilities so teams benefit without being buried by complexity.
+
+Approach:
+- Integrate: Embed LLMs, vision models, and AI APIs directly into existing products and workflows.
+- Optimize: Fine-tune prompts, manage costs, and ensure AI outputs are reliable, consistent, and safe.
+- Monitor: Ongoing management of AI systems — tracking performance, costs, and quality over time.
+
+---
+
+## Why 34 North
+
+- Full-Stack Depth: Database to UI, API to deployment — one person who sees the whole picture means fewer gaps and better design decisions.
+- Fast Turnaround: No bureaucracy, no long sprint cycles. Decisions get made and work gets done at startup speed.
+- Clear Communication: Regular updates in plain language. Always know where things stand — no jargon, no surprises.
+- Built to Scale: Code and architecture designed with future growth in mind, without over-engineering for problems that don't exist yet.
+- AI-Native Approach: AI tooling is incorporated throughout development where it adds value — faster delivery, smarter solutions, lower cost.
+- Long-Term Partnership: Not just a vendor — a technical partner invested in client success. Many clients continue working together for years.
+
+---
+
+## Selected Work
+
+- Rev Rup (https://revrup.com): A Christian resource platform featuring sermons, prayers, FAQs, and teaching materials on biblical topics — built for personal spiritual growth and church communities.
+- GitHub (https://github.com/CodeNameSH): Open-source projects, experiments, and personal repositories.
+
+Most production work was built within companies and is not publicly shareable. Contact for details.
+
+---
+
+## Retainer Plans
+
+Monthly maintenance and support plans:
+
+### Essential — $200/month
+- Up to 3 hours per month
+- Software and security updates
+- Hosting and uptime monitoring
+- Bug fixes and minor adjustments
+- Priority email support
+- Monthly status update
+
+### Growth — $450/month (Most Popular)
+- Up to 7 hours per month
+- Everything in Essential
+- Content and copy updates
+- SEO monitoring and reporting
+- 48-hour response guarantee
+- Quarterly review call
+
+### Partner — $800/month
+- Up to 12 hours per month
+- Everything in Growth
+- Feature development priority
+- Same-day response guarantee
+- Monthly strategy call
+- Dedicated roadmap planning
+
+Non-profit and ministry organizations are welcome — reach out for custom pricing.
+
+---
+
+## Contact
+
+Contact form: https://34north.net/#contact
+Email: contact@34north.net
+Response time: within two business days
+
+All inquiries are handled personally. No sales teams, no runaround.
+
+---
+
+## FAQ
+
+Q: What software development services does 34 North offer?
+A: 34 North offers software consulting, database design, website development, API development, and AI integration and management services.
+
+Q: How can I hire a software developer for my project?
+A: Reach out through the contact form at https://34north.net/#contact. Describe your project and a response will come within two business days.
+
+Q: Does 34 North work with AI and machine learning?
+A: Yes. 34 North integrates and manages AI capabilities into existing products and workflows, and helps businesses adopt AI tooling effectively.
+
+Q: How much does a website cost?
+A: Website projects at 34 North start at $3,000, with pricing based on features and complexity. Monthly maintenance retainers start at $200/month.
+
+Q: Does 34 North offer ongoing website maintenance?
+A: Yes. Monthly retainer plans start at $200/month, covering maintenance, security updates, and ongoing support. Higher tiers include additional hours, SEO monitoring, and quarterly strategy calls.
+
+---
+
+## Links
+
+- Homepage: https://34north.net
+- LinkedIn: https://www.linkedin.com/company/119203913/
+- GitHub: https://github.com/CodeNameSH
+- Sitemap: https://34north.net/sitemap.xml

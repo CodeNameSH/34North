@@ -1,0 +1,35 @@
+# 34 North
+
+> Expert software development services: strategic consulting, database design, website and API development, and AI integration. Based in the United States, serving clients worldwide.
+
+34 North is a one-person software development and consulting practice. Clients work directly with the developer — no account managers, no handoffs.
+
+## Services
+
+- [Software Consulting](https://34north.net/#consulting): Technology audits, architecture reviews, build-vs-buy analysis, technical roadmaps, and legacy system modernization.
+- [Database Design](https://34north.net/#database): Relational and NoSQL schema design, query optimization, indexing, data modeling for analytics, migrations, replication, and backup planning.
+- [Website Development](https://34north.net/#web-api): Custom websites and site refreshes, built for performance, accessibility, and SEO. Projects start at $3,000.
+- [API Development](https://34north.net/#web-api): REST and GraphQL API design and development, third-party integrations, auth, and security.
+- [AI Integration & Management](https://34north.net/#ai): Embedding LLMs and AI APIs into existing products and workflows. Prompt optimization, cost management, and ongoing AI system monitoring.
+
+## Retainer Plans
+
+Monthly maintenance and support plans available after project completion:
+
+- Essential — $200/month: Up to 3 hours, software/security updates, uptime monitoring, bug fixes, priority email support, monthly status update.
+- Growth — $450/month: Up to 7 hours, everything in Essential plus content updates, SEO monitoring, 48-hour response guarantee, quarterly review call.
+- Partner — $800/month: Up to 12 hours, everything in Growth plus feature development priority, same-day response guarantee, monthly strategy call, dedicated roadmap planning.
+
+Non-profit and ministry organizations are welcome — custom pricing available.
+
+## Contact
+
+Email: contact@34north.net
+Contact form: https://34north.net/#contact
+Response time: within two business days
+
+## Links
+
+- [LinkedIn](https://www.linkedin.com/company/119203913/)
+- [GitHub](https://github.com/CodeNameSH)
+- [Sitemap](https://34north.net/sitemap.xml)
