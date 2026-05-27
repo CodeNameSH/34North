@@ -10,17 +10,18 @@ export default {
     const url = new URL(request.url);
     const accept = request.headers.get('Accept') || '';
 
-    if (url.pathname === '/worker.js') {
+    if (url.pathname === '/_worker.js') {
       return new Response(null, { status: 404 });
     }
 
-    // Markdown negotiation: serve llms-full.txt when agent requests text/markdown
+    // Markdown negotiation — return llms-full.txt for any request preferring text/markdown
     if (accept.includes('text/markdown')) {
       try {
-        const mdRequest = new Request(new URL('/llms-full.txt', request.url).toString());
-        const mdResponse = await env.ASSETS.fetch(mdRequest);
-        if (mdResponse.ok) {
-          return new Response(mdResponse.body, {
+        const mdResp = await env.ASSETS.fetch(
+          new Request(new URL('/llms-full.txt', request.url).toString())
+        );
+        if (mdResp.ok) {
+          return new Response(mdResp.body, {
             status: 200,
             headers: {
               'Content-Type': 'text/markdown; charset=utf-8',
@@ -38,16 +39,15 @@ export default {
       return new Response(null, { status: 404 });
     }
 
-    // Pass through non-HTML responses unchanged
-    const contentType = response.headers.get('Content-Type') || '';
-    if (!contentType.includes('text/html')) {
+    // Add Link headers on homepage — use pathname, not content-type, to avoid quirks
+    const isHomepage = url.pathname === '/' || url.pathname === '/index.html';
+    if (!isHomepage) {
       return response;
     }
 
-    // Inject Link headers on HTML responses
     const headers = new Headers(response.headers);
     headers.set('Link', LINK_HEADERS);
-    headers.append('Vary', 'Accept');
+    headers.set('Vary', 'Accept');
 
     return new Response(response.body, {
       status: response.status,
